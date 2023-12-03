@@ -1,0 +1,43 @@
+﻿
+<div *ngIf="stockData">
+    <h2>{{ stockData.symbol }}</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Dia</th>
+                <th>Data</th>
+                <th>Valor</th>
+                <th>Variação em relação a D-1</th>
+                <th>Variação em relação aos primeiros dados</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let day of stockData.days">
+                <td>{{ day.day }}</td>
+                <td>{{ day.date }}</td>
+                <td>{{ day.value }}</td>
+                <td>{{ day.variationD1 }}</td>
+                <td>{{ day.variationFirst }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    /* src/app/stock-variation/stock-variation.component.css */
+
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    }
+
+    th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    }
+
+    th {
+    background-color: #f2f2f2;
+    }
+
+</div>
